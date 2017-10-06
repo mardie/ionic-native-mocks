@@ -57,6 +57,19 @@ export interface NativeGeocoderReverseResult {
      * The country code.
      */
     countryCode: string;
+
+    administrativeArea: string;
+
+    subAdministrativeArea: string;
+
+    locality: string;
+
+    subLocality: string;
+
+    thoroughfare: string;
+
+    subThoroughfare: string;
+
 }
 /**
  * Encapsulates format information about a forward geocoding result.

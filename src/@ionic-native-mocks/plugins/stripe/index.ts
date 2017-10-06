@@ -1,4 +1,4 @@
-import { Stripe } from '@ionic-native/stripe';
+import { Stripe, StripeCardTokenRes } from '@ionic-native/stripe';
 
 export interface StripeCardTokenParams {
     /**
@@ -93,8 +93,19 @@ export class StripeMock extends Stripe {
      * @param params {StripeCardTokenParams} Credit card information
      * @return {Promise<string>} returns a promise that resolves with the token, or rejects with an error
      */
-    createCardToken(params: StripeCardTokenParams): Promise<string> {
-        let response: string = '';
+    createCardToken(params: StripeCardTokenParams): Promise<StripeCardTokenRes> {
+        let response: StripeCardTokenRes = {
+            card: {
+                brand: '',
+                exp_month: 42,
+                exp_year: 42,
+                funding: '',
+                last4: '',
+            },
+            created: '',
+            id: '',
+            type: ''
+        };
         return new Promise((resolve, reject) => {
             resolve(response);
         });
